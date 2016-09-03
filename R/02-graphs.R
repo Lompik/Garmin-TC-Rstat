@@ -329,3 +329,19 @@ aggregate(DaysofRest ~ MonthFac,data=Totals[,c("MonthFac","DaysofRest")],FUN=mea
 
 # One week Activity output
 Totals[Totals$ActivityId>max (Totals$ActivityId)-7*24*3600,c("Sport","ActivityId","DayOfWeek")]
+
+
+############################################################################
+## Mosaic                                                                 ##
+############################################################################
+
+library(vcd)
+library(colorspace)
+
+MosaicData <- (na.omit(data.frame(Results[Results$AverageHeartRateBpm>120   & Results$AvgSpeed>10 & Results$DistanceMeters>980,]$AvgSpeed,Results[Results$AverageHeartRateBpm>120   & Results$AvgSpeed>10 & Results$DistanceMeters>980,]$Sport,Results[Results$AverageHeartRateBpm>120   & Results$AvgSpeed>10 & Results$DistanceMeters>980,]$Month,Results[Results$AverageHeartRateBpm>120   & Results$AvgSpeed>10 & Results$DistanceMeters>980,]$AverageHeartRateBpm)));names(MosaicData)=c("AvgSpeed","Sport","Month","AvgHR")
+MosaicDataRunning=MosaicData[MosaicData$Sport==levels(MosaicData$Sport)[1] & MosaicData$AvgSpeed<15,]
+MosaicDataRunning$Month <- factor(MosaicDataRunning$Month,ordered=TRUE)
+MosaicDataRunning$AvgSpeed <- (cut2(MosaicDataRunning$AvgSpeed,g=4))
+MosaicDataRunning$AvgHR <- (cut2(MosaicDataRunning$AvgHR,g=5))
+
+mosaic( AvgHR +AvgSpeed~Month,data=MosaicDataRunning,split_vertical=c(FALSE,TRUE,TRUE),gp=gpar(fill=c(rev(sequential_hcl(5,h=5, c.=c(50,50),l=c(30,95))))),col=1, rot_labels=c(0,0,45,0))

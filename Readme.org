@@ -35,8 +35,10 @@ The plots on this section outlines the PBs for Running and Biking (the /red/ dot
  [[./plots/id7_HR_etime.png]]
 *** total distance by activity
  [[./plots/id14_Total_Distance_byact.png]]
+*** Mosaic AvgSpeed / Avg HR per month (Running)
+ [[./plots/mosaic.png]]
 * Notes
   - Garming TC does not name on "other" activities. Those can include walking, swimming, etc
-  - Accuracy of the HR monitor can debated.
+  - Accuracy of the HR monitor can debated, especially after 1 year usage.
   - this code is a bit old and lacking some styles that I learned later, namely pipes and javascript libs.
   - Some plots needs the temperature during the activity. Look for a nearby temperature temperature station with open data. If you're in the US there should be plenty.
