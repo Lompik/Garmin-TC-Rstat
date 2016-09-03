@@ -21,7 +21,7 @@ Plots similar to the one on Garmin Connect.
 *** Activity count by year
  [[./plots/id25_Activity_peryear.png]]
 
-** Personal best based
+** Personal Best trends
 The plots on this section outlines the PBs for Running and Biking (the /red/ dots).
 *** Avergare speed vs date - Running
  [[./plots/id21_AvgSpeed_distance_Running.png]]
@@ -38,5 +38,5 @@ The plots on this section outlines the PBs for Running and Biking (the /red/ dot
 * Notes
   - Garming TC does not name on "other" activities. Those can include walking, swimming, etc
   - Accuracy of the HR monitor can debated.
-  - this code is a bit old and lacking some styles that I learned later, namely pipes.
+  - this code is a bit old and lacking some styles that I learned later, namely pipes and javascript libs.
   - Some plots needs the temperature during the activity. Look for a nearby temperature temperature station with open data. If you're in the US there should be plenty.
