@@ -1,0 +1,45 @@
+#+TITLE: Analyse your workout in R
+
+Since Garmin Training Center stores your data in a sqlite file, it's now now easy to sweat while analysing your workouts.
+
+* Instructions
+** locating the backup files
+   - Usually, a ~*.tcd~ file is stored in
+   ~C:\Users\*USER*\AppData\Roaming\Garmin\TrainingCenter\Backups~. You
+   can request a new backup save via the ~File~ menu in the software.
+** obtaining the plots
+   - the backup located in the previous section is actually a SQLite file that we'll feed to the ~R/graphs.R~ script.
+   - fill in your records in the ~R/load.R~ file - table ~Records~
+* Example plots
+Here's a few examples based on the data from a person regularly training (running, biking, and swimming). Your imagination is the limit.
+** The classics
+Plots similar to the one on Garmin Connect.
+*** Total weekly distance
+ [[./plots/id1_total_weekly_distance.png]]
+*** Monthly activity count
+ [[./plots/id2_Monthly_act_count.png]]
+*** Activity count by year
+ [[./plots/id25_Activity_peryear.png]]
+
+** Personal record based
+*** Average speed vs date
+ [[./plots/id19_AvgSpeed_date.png]]
+*** Avergare speed vs date - Running
+ [[./plots/id20_AvgSpeed_date_running.png]]
+*** Average speed vs date - Biking
+ [[./plots/id21_AvgSpeed_date_bike.png]]
+
+** other
+*** HR vs Activity Starttime
+ [[./plots/id3_HR_vs_Starttime.png]]
+*** Activity count by day of week
+ [[./plots/id6_Activity_dayofWeek.png]]
+*** HR vs elapsed time
+ [[./plots/id7_HR_etime.png]]
+*** total distance by activity
+ [[./plots/id14_Total_Distance_byact.png]]
+* Notes
+  - Garming TC does not name on "other" activities. Those can include walking, swimming, etc
+  - Accuracy of the HR monitor can debated.
+  - this code is a bit old and lacking some styles that I learned later, namely pipes.
+  - Some plots needs the temperature during the activity. Look for a nearby temperature temperature station with open data. If you're in the US there should be plenty.
