@@ -21,13 +21,14 @@ Plots similar to the one on Garmin Connect.
 *** Activity count by year
  [[./plots/id25_Activity_peryear.png]]
 
-** Personal record based
+** Personal best based
+The plots on this section outlines the PBs for Running and Biking (the /red/ dots).
 *** Average speed vs date
- [[./plots/id19_AvgSpeed_date.png]]
+ [[./plots/id19_AvgSpeed_distance.png]]
 *** Avergare speed vs date - Running
- [[./plots/id20_AvgSpeed_date_running.png]]
+ [[./plots/id20_AvgSpeed_distance_running.png]]
 *** Average speed vs date - Biking
- [[./plots/id21_AvgSpeed_date_bike.png]]
+ [[./plots/id21_AvgSpeed_distance_bike.png]]
 
 ** other
 *** HR vs Activity Starttime

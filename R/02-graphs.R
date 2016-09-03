@@ -277,7 +277,7 @@ p=ggplot(Totals[Totals$TotDuration<100 & Totals$Sport %in% c("Running","Biking")
     facet_grid(Sport~., scales = "free")+
     geom_point(data=Totals[Totals$ActivityId %in% Records[Records$Active==TRUE,"ActivityId"],],aes(x=TotDistance,y=AvgSpeed),colour="red",size=1)+
     mytheme
-myplot(p, "Average speed vs date", "Date","Average speed (km/h)", "id19_AvgSpeed_date.png")
+myplot(p, "Average speed vs distance", "Distance(km)","Average speed (km/h)", "id19_AvgSpeed_date.png")
 
 #PLOT# PLot avgspeed ~ distance for Running + Regression ##id=20
 p=ggplot(Totals[Totals$TotDuration<100&Totals$Sport=="Running",],aes(x=TotDistance,y=AvgSpeed,color=TotDuration))+
